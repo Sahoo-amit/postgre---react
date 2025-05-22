@@ -5,7 +5,7 @@ import dbRoute from './routes/db.route.js'
 const app = express()
 app.use(express.json())
 const corsOption={
-    origin:"http://localhost:5173",
+    origin:"https://postgre-react-frontend.onrender.com",
     credentials: true
 }
 
