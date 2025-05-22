@@ -11,7 +11,7 @@ const Todo = () => {
         if(tasks.trim()=="") return
         try {
             if(editId){
-                const res = await fetch(`http://localhost:3000/api/db/update/${editId}`,{
+                const res = await fetch(`https://postgre-react.onrender.com/api/db/update/${editId}`,{
                     method:"PUT",
                     headers:{
                         "Content-Type":"application/json"
@@ -22,7 +22,7 @@ const Todo = () => {
                 getData()
                 console.log(data)
             }else{
-                const res = await fetch("http://localhost:3000/api/db/add", {
+                const res = await fetch("https://postgre-react.onrender.com/api/db/add", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const Todo = () => {
     
     const getData = async()=>{
         try {
-            const res = await fetch("http://localhost:3000/api/db")
+            const res = await fetch("https://postgre-react.onrender.com/api/db")
             const data = await res.json()
             console.log(data)
             setTodos(data)
@@ -52,7 +52,7 @@ const Todo = () => {
 
     const deleteData = async(id)=>{
         try {
-            const res = await fetch(`http://localhost:3000/api/db/delete/${id}`,{
+            const res = await fetch(`https://postgre-react.onrender.com/api/db/delete/${id}`,{
                 method:"DELETE"
             })
             const data = await res.json()
